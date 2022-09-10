@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>
+      Simple Javascript Project for Beginners - Color Flipper (HTML, CSS & JS)
+    </title>
+    <style type="text/css">
+      * {
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+      }
+      body {
+        width: 100%;
+        min-height: 100vh;
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        justify-content: center;
+      }
+      .container {
+        /* width: 100%; */
+        text-align: center;
+      }
+      h1 {
+        background-color: dimgray;
+        padding: 10px 30px;
+        color: #fff;
+        border-radius: 10px;
+      }
+      #btn {
+        padding: 15px 30px;
+        color: #fff;
+        outline: none;
+        border: 0;
+        cursor: pointer;
+        background: dimgray;
+        margin-top: 20px;
+        font-size: 1.5em;
+        letter-spacing: 3px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h1>Background Color : <span class="color"></span></h1>
+      <button id="btn">Click Me</button>
+    </div>
+    <script type="text/javascript">
+      const colorsArray = ["red", "green", "yellow", "pink", "purple"];
+      const btn = document.getElementById("btn");
+      const color = document.querySelector(".color");
+      btn.addEventListener("click", function () {
+        const randomNumber = getRandomNumber();
+        document.body.style.backgroundColor = colorsArray[randomNumber];
+        color.innerHTML = colorArray[randomNumber];
+      });
+      function getRandomNumber() {
+        return Math.floor(Math.random() * colorsArray.length);
+      }
+    </script>
+  </body>
+</html>
